@@ -7,6 +7,8 @@ MySQL
 
 php-activerecord 
 
+Apache
+
 ## Installation
 
 run composer install 
