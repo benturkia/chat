@@ -14,6 +14,10 @@ use Chat\Core\Controller;
 class HomeController extends Controller
 {
     public function index(){
+        if ($this->getCurrentUser()) {
+            header('location:' . URL . 'chat/index');
+            return;
+        }
         $this->render('views/index.php');
     }
 }

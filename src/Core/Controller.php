@@ -8,13 +8,26 @@
 
 namespace Chat\Core;
 
-
+/**
+ * Class Controller
+ * @package Chat\Core
+ */
 class Controller
 {
 
-
+    /**
+     * @param $template
+     * @param array $data
+     */
     public function render($template, $data = array())
     {
         require APP . $template;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentUser(){
+        return $_SESSION['uid'];
     }
 }
