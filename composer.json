@@ -1,0 +1,15 @@
+{
+    "name": "benturkia/chat",
+    "description": "simple chat php5 mvc",
+    "minimum-stability": "dev",
+    "require": {
+        "php-activerecord/php-activerecord": "^1.1"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Chat\\" : "src/"
+        }
+    }
+}
