@@ -44,11 +44,11 @@ class Router
                 if (strlen($this->urlAction) == 0) {
                     $this->urlController->index();
                 } else {
-                    header('location: ' . URL . 'error');
+                   // header('location: ' . URL . 'error');
                 }
             }
         } else {
-            header('location: ' . URL . 'error');
+          //  header('location: ' . URL . 'error');
         }
     }
 
@@ -58,12 +58,14 @@ class Router
      */
     private function splitUrl()
     {
+
         if (isset($_GET['url'])) {
 
             // split URL
             $url = trim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
+
 
             $this->urlController = isset($url[0]) ? $url[0] : null;
             $this->urlAction = isset($url[1]) ? $url[1] : null;

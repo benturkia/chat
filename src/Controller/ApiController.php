@@ -45,6 +45,15 @@ class ApiController extends Controller
      */
     public function send (){
 
+        /**
+         * @var $user User
+         */
+        $user = User::create(array('content' => $_POST['content'], 'uid' => $_SESSION['uid']));
+
+        if($user){
+            $this->renderJson(['ok'=>'ok']);
+            return;
+        }
     }
 
 

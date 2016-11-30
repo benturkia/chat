@@ -38,6 +38,7 @@ class Controller
      * @return mixed
      */
     public function getCurrentUser(){
+        if(isset($_SESSION['uid']))
         return $_SESSION['uid'];
     }
 }
