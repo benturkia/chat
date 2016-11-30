@@ -33,6 +33,10 @@ class UserController extends Controller
             if (isset($user)&& $user->errors === null) {
                 $_SESSION['uid'] = (int)$user->id;
                 $_SESSION['current_user'] = $user->attributes();
+
+                $user->status = 1;
+                $user->save();
+
                 header('location:' . URL . 'chat/index');
                 return;
             }else{
@@ -47,6 +51,12 @@ class UserController extends Controller
 
     public function logout()
     {
+        /**
+         * @var $user User
+         */
+        $user = User::find($_SESSION['uid']);
+        $user->status = 0;
+        $user->save();
         $_SESSION['uid'] = null;
         $_SESSION['current_user'] = null;
         header('location: ' . URL);
@@ -116,4 +126,6 @@ class UserController extends Controller
         }
         return true;
     }
+
+
 }

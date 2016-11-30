@@ -16,6 +16,16 @@ class Controller
 {
 
     /**
+     * @param array $data
+     */
+    public function renderJson($data = array())
+    {
+        header('Content-type: application/json');
+        echo json_encode($data);
+        return;
+    }
+
+    /**
      * @param $template
      * @param array $data
      */

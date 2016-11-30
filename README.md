@@ -8,5 +8,9 @@ MySQL
 php-activerecord 
 
 ## Installation
-####step 1
+
 run composer install 
+
+import database (install/db.sql)
+
+change config db from file src/config/config.php
